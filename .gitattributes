@@ -1,0 +1,7 @@
+*.js linguist-language=astro
+* text=auto eol=lf
+
+# Windows batch files MUST keep CRLF line endings,
+# otherwise cmd.exe mis-parses every line (drops leading chars).
+*.bat text eol=crlf
+*.cmd text eol=crlf
