@@ -1,5 +1,17 @@
 # Repository Guidelines
 
+## Content Publishing — read this first
+
+**Before creating, editing, or publishing anything under `src/content/posts/`, read [`PUBLISHING.md`](./PUBLISHING.md).** It is the single source of truth for article frontmatter, folder-to-URL mapping, image placement, and the publish workflow. (The file is written in Chinese.)
+
+Hard rules that break the entire site build if violated:
+
+- Every `.md` / `.mdx` under `src/content/posts/` (including nested folders) **must** have frontmatter with at least `title` and `published`. One file without it fails the whole Astro build (`InvalidContentEntryDataError`) — and because the failure happens on Cloudflare, the deployed site **silently keeps serving the previous version**.
+- Non-article files (e.g. `README.md`) must **not** live under `src/content/posts/`. Use `docs/`.
+- Folder names become URL path segments: `posts/textbook/2.2-x.md` → `/posts/textbook/2.2-x/`.
+- After writing any `.bat`, convert it to **CRLF** line endings or cmd.exe mis-parses every line.
+- Validate content locally with `pnpm exec astro sync`. Do **not** rely on a full local `pnpm build` inside the WorkBuddy sandbox (bulk-delete protection aborts it); Cloudflare is the real build check.
+
 ## Project Structure & Module Organization
 
 Firefly is an Astro 7 site with Svelte islands and TypeScript configuration. Main source code lives in `src/`: routes in `src/pages`, layouts in `src/layouts`, reusable UI in `src/components`, styles in `src/styles`, content in `src/content`, helpers in `src/utils`, and Markdown/HTML plugins in `src/plugins`. Site configuration is split across `src/config` with matching type definitions in `src/types`; prefer imports from `@/config` when available. Static files served directly belong in `public`, source-managed images in `src/assets`, docs in `docs` and `Firefly-Docs`, and automation in `scripts`.

@@ -2,6 +2,19 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## ⚠️ Content publishing — read [`PUBLISHING.md`](./PUBLISHING.md) first
+
+This repository is a **personal blog**. Before creating, editing, or publishing anything under `src/content/posts/`, read [`PUBLISHING.md`](./PUBLISHING.md) — it is the single source of truth for frontmatter rules, folder-to-URL mapping, images, and the publish workflow. (Written in Chinese.)
+
+The rules most likely to bite you:
+
+- **Every** `.md` / `.mdx` under `src/content/posts/` (nested folders included) must have frontmatter with at least `title` and `published`. A single file missing it fails the entire Astro build with `InvalidContentEntryDataError`.
+- That failure happens on Cloudflare Workers Builds, not locally — so the site **silently keeps serving the old version** while `git push` reports success. `git push` succeeding does NOT mean the site updated. Check **Cloudflare → Workers & Pages → `firefly` → Deployments**.
+- Non-article files such as `README.md` must not be placed under `src/content/posts/` (use `docs/`).
+- Folder names become URL segments: `posts/textbook/2.2-x.md` → `/posts/textbook/2.2-x/`.
+- `.bat` files must be saved with CRLF line endings.
+- Verify content with `pnpm exec astro sync`. A full local `pnpm build` is unreliable in the WorkBuddy sandbox; treat Cloudflare as the authoritative build.
+
 ## Project Overview
 
 Firefly is a feature-rich static blog theme built on **Astro 7** with **Svelte 5** for interactive components. It's a fork of [Fuwari](https://github.com/saicaca/fuwari) extended with extensive features. Primary language is Chinese (Simplified) with i18n for en, zh_TW, ja, ko, ru.
