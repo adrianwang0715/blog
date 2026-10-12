@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Keep exploring.",
 
 	// 站点 URL
-	site_url: "https://voyager.pages.dev",
+	site_url: "https://firefly.adrianwang0715.workers.dev",
 
 	// 站点描述
 	description:
