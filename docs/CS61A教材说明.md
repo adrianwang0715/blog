@@ -44,9 +44,12 @@
 | [4.6-Distributed-Data-Processing.md](4.6-Distributed-Data-Processing.md) | 4.6 分布式数据处理 | 9.6 KB |
 | [4.7-Parallel-Computing.md](4.7-Parallel-Computing.md) | 4.7 并行计算 | 21.9 KB |
 
-**共 20 节、446 个代码块**，已逐块与英文原文比对，内容完全一致。代码块按内容自动标注语言
+**共 20 节、440 个代码块、22 张环境图**，已逐块与英文原文比对，内容完全一致。代码块按内容自动标注语言
 （```python / ```scheme / ```bash）：Python 缩进、`>>>` 交互记录、Scheme 的 `>` 会话、logic 查询、
 shell 命令均原样保留。
+
+> **环境图**：原站这部分示例是交互式 Python Tutor 组件（JS 实时渲染，非图片），已用无头浏览器
+> 逐张渲染截图（`img/env/`，共 22 张），按原文顺序插到对应代码块之后；同一段代码的分步图已合并为一组。
 
 ---
 
@@ -95,6 +98,12 @@ shell 命令均原样保留。
 - `factorial_machine.png` —— 阶乘求值过程（3.5）
 - `clientserver.png` —— 客户端 / 服务器（4.5）
 - `deadlock.png` —— 死锁（4.7）
+
+### 环境图（`img/env/`）
+
+渲染自原站交互式 Python Tutor 组件，共 22 张（文件名对应原页面 `<div class="example" id="example_NN">`）：
+
+- **2.3 序列** 7 张 · **2.4 可变数据** 11 张 · **2.7 递归数据结构** 4 张
 
 ---
 
