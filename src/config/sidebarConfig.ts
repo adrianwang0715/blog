@@ -45,24 +45,23 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: true,
 		},
 		{
-			// 组件类型：公告组件
-			type: "announcement",
+			// 组件类型：文件树（按 src/content/posts 的真实目录结构生成）
+			type: "postTree",
 			// 是否启用该组件
 			enable: true,
 			// 组件位置
 			position: "top",
 			// 是否在文章详情页显示
 			showOnPostPage: true,
-		},
-		{
-			// 组件类型：音乐播放器
-			type: "music",
-			// 是否启用该组件
-			enable: true,
-			// 组件位置
-			position: "top",
-			// 是否在文章详情页显示
-			showOnPostPage: true,
+			// 组件专属配置
+			customProps: {
+				// 组件标题，改成你想要的名字
+				title: "文件树",
+				// 是否显示顶层的 posts 根节点
+				showRoot: true,
+				// true = 所有目录默认折叠起来，点开才展开
+				collapseByDefault: false,
+			},
 		},
 		{
 			// 组件类型：分类组件
@@ -237,14 +236,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		{
 			// 组件类型：用户资料组件
 			type: "profile",
-			// 是否启用该组件
-			enable: true,
-			// 是否在文章详情页显示
-			showOnPostPage: true,
-		},
-		{
-			// 组件类型：公告组件
-			type: "announcement",
 			// 是否启用该组件
 			enable: true,
 			// 是否在文章详情页显示
