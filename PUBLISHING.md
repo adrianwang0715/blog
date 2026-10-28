@@ -9,7 +9,7 @@
 
 | 项 | 值 |
 |---|---|
-| 本地仓库 | `C:\Users\22517\Desktop\Files\Study\Code\blog` |
+| 本地仓库 | `C:\Users\22517\Desktop\Files\blog` |
 | GitHub | https://github.com/adrianwang0715/blog |
 | 线上地址 | https://firefly.adrianwang0715.workers.dev |
 | 托管 | Cloudflare **Workers**（静态资源模式），项目名 `firefly` |
